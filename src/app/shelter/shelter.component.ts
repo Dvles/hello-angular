@@ -4,9 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-shelter',
   imports: [],
   template: `
-    <p>
-      shelter works!
-    </p>
+    <section>      <form>        <input type="text" placeholder="Filter by region" />        <button class="primary" type="button">Search</button>      </form>    </section>
   `,
   styles: ``
 })
