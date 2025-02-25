@@ -14,13 +14,14 @@ import { ContactMethod } from '../models/contact-method.enum';
          <button class="primary" type="button">Search</button>      
       </form>    
     </section>
-    <section class="results">      <app-shelter-location></app-shelter-location>    </section>
+    <section class="results">      <app-shelter-location [shelterLocation]="shelterLocation"></app-shelter-location>    </section>
   `,
     styleUrls: ['./shelter.component.css'],
 })
 export class ShelterComponent {
 
-  readonly baseUrl = 'https://angular.dev/assets/images/tutorials/common';
+/*   readonly baseUrl = 'https://angular.dev/assets/images/tutorials/common';
+  photo: `${this.baseUrl}/example-house.jpg`, */
 
   shelterLocation: ShelterLocation = {
 
