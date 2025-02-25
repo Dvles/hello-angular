@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {CommonModule} from '@angular/common';
 import { ShelterLocationComponent } from '../shelter-location/shelter-location.component';
+import { ShelterLocation } from '../shelter-location';
 
 @Component({
   selector: 'app-shelter',
@@ -17,5 +18,21 @@ import { ShelterLocationComponent } from '../shelter-location/shelter-location.c
     styleUrls: ['./shelter.component.css'],
 })
 export class ShelterComponent {
+
+  readonly baseUrl = 'https://angular.dev/assets/images/tutorials/common';
+
+  shelterLocation: ShelterLocation = {
+
+    id: 999,
+    name: "CENTRE D'ACCUEIL D'URGENCE ARIANE",
+    region: "Forest",
+    telephone: "02/346.66.60",
+    photo: "https://www.ama.be/wp-content/uploads/2017/10/centre-accueil-urgence-ariane.jpg",
+    adress: "Avenue du Pont de Luttre, 132 — 1190 FOREST",
+    wifi: true,
+    laundry: false,
+    breakfast: false
+
+  }
 
 }
