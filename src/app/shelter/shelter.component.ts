@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {CommonModule} from '@angular/common';
 import { ShelterLocationComponent } from '../shelter-location/shelter-location.component';
 import { ShelterLocation } from '../shelter-location';
+import { ContactMethod } from '../models/contact-method.enum';
 
 @Component({
   selector: 'app-shelter',

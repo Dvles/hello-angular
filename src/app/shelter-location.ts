@@ -5,7 +5,7 @@ export interface ShelterLocation {
     name: string;
     region: string;
     telephone: string;
-    contact_methods: ContactMethod; 
+    contact_methods: ContactMethod[]; 
     photo: string;
     adress: string;
     wifi: boolean;
