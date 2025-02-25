@@ -70,5 +70,13 @@ export class ShelterService {
         breakfast: false
       }
     ]
-    
+
+  
+
+  getAllHousingLocations(): ShelterLocation[] {
+    return this.shelterLocationList;
+  }
+  getHousingLocationById(id: number): ShelterLocation | undefined {
+    return this.shelterLocationList.find((shelterLocation) => shelterLocation.id === id);
+  }
 }
