@@ -26,5 +26,9 @@ import { ShelterService } from '../shelter.service';
 export class ShelterComponent {
 
   shelterLocationList: ShelterLocation[]=[];
-  shelterSevice: ShelterService = inject(ShelterService);
+  shelterService: ShelterService = inject(ShelterService);
+
+  constructor(){
+    this.shelterLocationList = this.shelterService.getAllShelterLocations();
+  }
 }
