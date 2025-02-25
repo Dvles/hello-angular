@@ -13,4 +13,6 @@ import { ShelterLocation } from '../shelter-location';
 })
 export class ShelterLocationComponent {
   @Input() shelterLocation! : ShelterLocation;
+
+  // The exclamation point is called the non-null assertion operator and it tells the TypeScript compiler that the value of this property won't be null or undefined.
 }
