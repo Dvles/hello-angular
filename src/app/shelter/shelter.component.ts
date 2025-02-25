@@ -27,6 +27,7 @@ export class ShelterComponent {
     name: "CENTRE D'ACCUEIL D'URGENCE ARIANE",
     region: "Forest",
     telephone: "02/346.66.60",
+    contact_methods: [ContactMethod.Email, ContactMethod.Phone],
     photo: "https://www.ama.be/wp-content/uploads/2017/10/centre-accueil-urgence-ariane.jpg",
     adress: "Avenue du Pont de Luttre, 132 — 1190 FOREST",
     wifi: true,
