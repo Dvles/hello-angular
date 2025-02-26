@@ -1,5 +1,7 @@
 import {Component, Input} from '@angular/core';
+
 import { ShelterLocation } from '../shelter-location';
+
 
 @Component({
   selector: 'app-shelter-location',
