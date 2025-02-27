@@ -10,10 +10,10 @@ import { ShelterService } from '../shelter.service';
   imports: [CommonModule, ShelterLocationComponent],
   template: `
     <section>      
-      <form>       
+    <form>       
          <input type="text" placeholder="Filter by region" />        
-         <button class="primary" type="button">Search</button>      
-      </form>    
+         <button class="primary" type="button"  (click)="filterResults(filter.value)">Search</button>     
+      </form>     
     </section>
     <section class="results">      
       <app-shelter-location 
@@ -27,6 +27,8 @@ export class ShelterComponent {
 
   shelterLocationList: ShelterLocation[]=[];
   shelterService: ShelterService = inject(ShelterService);
+  filteredLocationList: ShelterLocation[] = [];
+
 
   constructor(){
     this.shelterLocationList = this.shelterService.getAllShelterLocations();
