@@ -46,11 +46,27 @@ import {FormControl, FormGroup, ReactiveFormsModule} from '@angular/forms';
 })
 export class DetailsComponent {
   route: ActivatedRoute = inject(ActivatedRoute);
-  housingService = inject(ShelterService);
-  housingLocation: ShelterLocation | undefined;
+  shelterService = inject(ShelterService);
+  shelterLocation: ShelterLocation | undefined;
   applyForm = new FormGroup({
     firstName: new FormControl(''),
     lastName: new FormControl(''),
     email: new FormControl(''),
   });
+
+  constructor() {
+    const shelterLocationId = parseInt(this.route.snapshot.params['id'], 10);
+    this.shelterLocation = this.shelterService.getShelterLocationById(shelterLocationId);
+  }
+
+  submitApplication() {
+    this.shelterService.submitApplication(
+      this.applyForm.value.firstName ?? '',
+      this.applyForm.value.lastName ?? '',
+      this.applyForm.value.email ?? '',
+    );
+  }
+
 }
+
+
