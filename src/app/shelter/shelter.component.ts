@@ -10,31 +10,38 @@ import { ShelterService } from '../shelter.service';
   imports: [CommonModule, ShelterLocationComponent],
   template: `
     <section>      
-    <form>       
-         <input type="text" placeholder="Filter by region" />        
-         <button class="primary" type="button"  (click)="filterResults(filter.value)">Search</button>     
+      <form>       
+         <input #filter type="text" placeholder="Filter by region" />        
+         <button class="primary" type="button" (click)="filterResults(filter.value)">Search</button>     
       </form>     
     </section>
     <section class="results">      
       <app-shelter-location 
-      
-      *ngFor="let shelterLocation of shelterLocationList" [shelterLocation]="shelterLocation"></app-shelter-location>    
+        *ngFor="let shelterLocation of filteredLocationList" 
+        [shelterLocation]="shelterLocation">
+      </app-shelter-location>    
     </section>
   `,
-    styleUrls: ['./shelter.component.css'],
+  styleUrls: ['./shelter.component.css'],
 })
 export class ShelterComponent {
 
-  shelterLocationList: ShelterLocation[]=[];
+  shelterLocationList: ShelterLocation[] = [];
   shelterService: ShelterService = inject(ShelterService);
   filteredLocationList: ShelterLocation[] = [];
-
 
   constructor(){
     this.shelterLocationList = this.shelterService.getAllShelterLocations();
     this.filteredLocationList = this.shelterLocationList;
   }
 
-  filterResults(text: string) {    if (!text) {      this.filteredLocationList = this.shelterLocationList;      return;    }    this.filteredLocationList = this.shelterLocationList.filter((shelterLocation) =>      shelterLocation?.region.toLowerCase().includes(text.toLowerCase()),    );  
+  filterResults(text: string) {
+    if (!text) {
+      this.filteredLocationList = this.shelterLocationList;
+      return;
+    }
+    this.filteredLocationList = this.shelterLocationList.filter((shelterLocation) =>
+      shelterLocation?.region.toLowerCase().includes(text.toLowerCase())
+    );
   }
 }
