@@ -79,4 +79,9 @@ export class ShelterService {
   getShelterLocationById(id: number): ShelterLocation | undefined {
     return this.shelterLocationList.find((shelterLocation) => shelterLocation.id === id);
   }
+
+  submitApplication(firstName: string, lastName, email: string){
+    console.log(`Shelter application received: firstName: ${firstName}, lastName: ${lastName}, email: ${email}.`,);
+
+  }
 }
