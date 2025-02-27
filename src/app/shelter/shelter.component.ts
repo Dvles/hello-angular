@@ -34,4 +34,7 @@ export class ShelterComponent {
     this.shelterLocationList = this.shelterService.getAllShelterLocations();
     this.filteredLocationList = this.shelterLocationList;
   }
+
+  filterResults(text: string) {    if (!text) {      this.filteredLocationList = this.shelterLocationList;      return;    }    this.filteredLocationList = this.shelterLocationList.filter((shelterLocation) =>      shelterLocation?.region.toLowerCase().includes(text.toLowerCase()),    );  
+  }
 }
