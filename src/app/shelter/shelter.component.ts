@@ -32,5 +32,6 @@ export class ShelterComponent {
 
   constructor(){
     this.shelterLocationList = this.shelterService.getAllShelterLocations();
+    this.filteredLocationList = this.shelterLocationList;
   }
 }
