@@ -30,9 +30,12 @@ export class ShelterComponent {
   shelterService: ShelterService = inject(ShelterService);
   filteredLocationList: ShelterLocation[] = [];
 
-  constructor(){
-    this.shelterLocationList = this.shelterService.getAllShelterLocations();
-    this.filteredLocationList = this.shelterLocationList;
+
+  constructor() {    
+    this.shelterService.getAllShelterLocations().then((shelterLocationList: ShelterLocation[]) => {      
+      this.shelterLocationList = shelterLocationList;      
+      this.filteredLocationList = shelterLocationList;    
+    });  
   }
 
   filterResults(text: string) {

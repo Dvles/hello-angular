@@ -16,12 +16,11 @@ export class ShelterService {
     
     async getShelterLocationById(id: number): Promise<ShelterLocation | undefined> {    
       const data = await fetch(`${this.url}/${id}`);    
-      return (await data.json()) ?? {};  
+      return (await data.json()) ?? {}; 
     }  
     
     submitApplication(firstName: string, lastName: string, email: string) {    // tslint:disable-next-line   
     console.log(firstName, lastName, email);  }
 
-  
 
 }

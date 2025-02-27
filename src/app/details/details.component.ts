@@ -54,9 +54,12 @@ export class DetailsComponent {
     email: new FormControl(''),
   });
 
+
   constructor() {
-    const shelterLocationId = parseInt(this.route.snapshot.params['id'], 10);
-    this.shelterLocation = this.shelterService.getShelterLocationById(shelterLocationId);
+    const shelterLocationId = parseInt(this.route.snapshot.params['id'], 10);    
+    this.shelterService.getShelterLocationById(shelterLocationId).then((shelterLocation) => {      
+      this.shelterLocation = shelterLocation;  
+    });
   }
 
   submitApplication() {
