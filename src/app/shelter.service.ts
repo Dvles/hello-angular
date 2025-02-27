@@ -80,7 +80,7 @@ export class ShelterService {
     return this.shelterLocationList.find((shelterLocation) => shelterLocation.id === id);
   }
 
-  submitApplication(firstName: string, lastName, email: string){
+  submitApplication(firstName: string, lastName: string, email: string){
     console.log(`Shelter application received: firstName: ${firstName}, lastName: ${lastName}, email: ${email}.`,);
 
   }

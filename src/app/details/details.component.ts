@@ -7,15 +7,15 @@ import {FormControl, FormGroup, ReactiveFormsModule} from '@angular/forms';
 
 @Component({
   selector: 'app-details',
-  imports: [CommonModule, ReactiveFormsModule, ShelterService],
+  imports: [CommonModule, ReactiveFormsModule],
   template: `
     <article>
       <img
         class="listing-photo"
         [src]="shelterLocation?.photo"
-        alt="{ shelterLocation?.name }}"
-        crossorigin
+        alt="shelterLocation?.name"
       />
+      
       <section class="listing-description">
         <h2 class="listing-heading">{{ shelterLocation?.name }}</h2>
         <p class="listing-location">{{ shelterLocation?.adress }}</p>
@@ -42,7 +42,7 @@ import {FormControl, FormGroup, ReactiveFormsModule} from '@angular/forms';
       </section>
     </article>
   `,
-  styles: ``
+  styleUrls: ['./details.component.css'],
 })
 export class DetailsComponent {
   route: ActivatedRoute = inject(ActivatedRoute);
